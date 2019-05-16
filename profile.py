@@ -64,6 +64,8 @@ iface3.addAddress(pg.IPv4Address(prefixForIP + str(3), "255.255.255.0"))
 node3.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/setup_singularity.sh"))
 node3.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/linpack/singularity_linpack.sh"))
 
+link = request.LAN("lan")
+
 link.addInterface(iface1)
 link.addInterface(iface2)
 link.addInterface(iface3)
