@@ -9,6 +9,7 @@ From: ubuntu:18.04
 
 %post
   apt-get update
+  apt-get install -y libgomp1 numactl
   
 %runscript
   /stream.exe
