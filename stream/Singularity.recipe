@@ -1,0 +1,12 @@
+Bootstrap: docker
+From: ubuntu:18.04
+
+%help
+  This is a container to launch the Stream benchmark
+
+%post
+  apt-get update
+  git clone -b singularity --single-branch https://github.com/pmackevicius/VirtualizationComparison
+  cd VirtualizationComparison/stream
+  make
+  ./stream.exe
