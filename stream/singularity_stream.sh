@@ -1,4 +1,3 @@
-git clone https://github.com/pmackevicius/VirtualizationComparison
+sudo git clone https://github.com/pmackevicius/VirtualizationComparison
 cd VirtualizationComparison/stream
-make
-./stream.exe
+sudo singularity build stream.img Singularity.recipe
