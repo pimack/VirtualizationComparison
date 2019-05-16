@@ -27,12 +27,13 @@ for i in range(3):
   if i == 0:
     node = request.RawPC("KVM")
     node.hardware_type = "c220g2"
+    node.routable_control_ip = "true"
     node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU16-64-STD"
     iface = node.addInterface("if" + str(i))
     iface.component_id = "eth1"
     iface.addAddress(pg.IPv4Address(prefixForIP + str(i + 1), "255.255.255.0"))
     link.addInterface(iface)
-    node.routable_control_ip = "true"
+    
     
     #node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/setup_kvm.sh"))
     
@@ -40,12 +41,13 @@ for i in range(3):
     node = request.RawPC("Docker")
     node.hardware_type = "c220g2"
     node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU16-64-STD"
+    node.routable_control_ip = "true"
     
     iface = node.addInterface("if" + str(i))
     iface.component_id = "eth1"
     iface.addAddress(pg.IPv4Address(prefixForIP + str(i + 1), "255.255.255.0"))
     link.addInterface(iface)
-    node.routable_control_ip = "true"
+    
     
     node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/setup_docker.sh"))
     node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/linpack/docker_linpack.sh"))
@@ -53,12 +55,14 @@ for i in range(3):
   elif i == 2:
     node = request.RawPC("Singularity")
     node.hardware_type = "c220g2"
+    node.routable_control_ip = "true"
+    
     node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU16-64-STD"
     iface = node.addInterface("if" + str(i))
     iface.component_id = "eth1"
     iface.addAddress(pg.IPv4Address(prefixForIP + str(i + 1), "255.255.255.0"))
     link.addInterface(iface)
-    node.routable_control_ip = "true"
+    
     
     node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/setup_singularity.sh"))
     node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/linpack/singularity_linpack.sh"))
