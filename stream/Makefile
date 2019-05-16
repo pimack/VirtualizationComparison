@@ -15,4 +15,4 @@ libutils.a:	utils.o
 	ranlib libutils.a
 
 stream.o:	stream.c utils.h
-gcc $(CFLAGS) -c stream.c
+	gcc $(CFLAGS) -c stream.c
