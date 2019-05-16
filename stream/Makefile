@@ -4,7 +4,6 @@ LDFLAGS = -L. -lutils
 all:	stream.exe
 
 stream.exe: libutils.a stream.o
-	mkdir -p bin
 	gcc $(CFLAGS) -o stream.exe stream.o $(LDFLAGS)
 
 utils.o:	utils.c utils.h talker.c
