@@ -25,7 +25,7 @@ link = request.LAN("lan")
 
 for i in range(3):
   if i == 0:
-    node = request.rawPC("KVM")
+    node = request.RawPC("KVM")
     node.hardware_type = "c220g2"
     node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU16-64-STD"
     iface = node.addInterface("if" + str(i))
@@ -37,7 +37,7 @@ for i in range(3):
     #node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/setup_kvm.sh"))
     
   elif i == 1:
-    node = request.rawPC("Docker")
+    node = request.RawPC("Docker")
     node.hardware_type = "c220g2"
     node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU16-64-STD"
     
@@ -51,7 +51,7 @@ for i in range(3):
     node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/linpack/docker_linpack.sh"))
   
   elif i == 2:
-    node = request.rawPC("Singularity")
+    node = request.RawPC("Singularity")
     node.hardware_type = "c220g2"
     node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU16-64-STD"
     iface = node.addInterface("if" + str(i))
