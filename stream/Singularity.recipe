@@ -4,6 +4,12 @@ From: ubuntu:18.04
 %help
   This is a container to launch the Stream benchmark
 
+%files
+  stream.exe  /
+
 %post
   apt-get update
+  
+%runscript
   ./stream.exe
+  
