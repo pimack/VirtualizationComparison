@@ -66,9 +66,9 @@ node3.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/lin
 
 link = request.LAN("lan")
 
-link.addInterface(iface1)
-link.addInterface(iface2)
-link.addInterface(iface3)
+#link.addInterface(iface1)
+#link.addInterface(iface2)
+#link.addInterface(iface3)
     
   
 pc.printRequestRSpec(request)
