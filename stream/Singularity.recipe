@@ -11,5 +11,5 @@ From: ubuntu:18.04
   apt-get update
   
 %runscript
-  ./stream.exe
+  /stream.exe
   
