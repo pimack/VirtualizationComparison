@@ -33,6 +33,7 @@ for i in range(3):
     iface.addAddress(pg.IPv4Address(prefixForIP + str(i + 1), "255.255.255.0"))
     link.addInterface(iface)
     node.routable_control_ip = "true"
+    
     #node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/setup_kvm.sh"))
     
   elif i == 1:
@@ -47,6 +48,8 @@ for i in range(3):
     node.routable_control_ip = "true"
     
     node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/setup_docker.sh"))
+    node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/linpack/docker_linpack.sh"))
+  
   elif i == 2:
     node = request.rawPC("Singularity")
     node.hardware_type = "c220g2"
@@ -58,6 +61,7 @@ for i in range(3):
     node.routable_control_ip = "true"
     
     node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/setup_singularity.sh"))
+    node.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/linpack/singularity_linpack.sh"))
 
     
   
