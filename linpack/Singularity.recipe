@@ -1,0 +1,15 @@
+Bootstrap: docker
+From: ubuntu:18.04
+
+%help
+  This is a container to launch the Linpack benchmark
+
+%files
+  linpack_10.3.4/benchmarks/linpack/xlinpack_xeon64  /
+
+%post
+  apt-get update
+  apt-get install -y libgomp1 numactl
+  
+%runscript
+  /xlinpack_xeon64
