@@ -6,7 +6,7 @@ all:	stream.exe
 stream.exe: libutils.a stream.o
 	gcc $(CFLAGS) -o stream.exe stream.o $(LDFLAGS)
 
-utils.o:	utils.c utils.h talker.c
+utils.o:	utils.c utils.h 
 	gcc $(CFLAGS) -c utils.c
 
 libutils.a:	utils.o
