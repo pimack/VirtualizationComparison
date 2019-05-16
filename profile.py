@@ -48,6 +48,7 @@ iface2.addAddress(pg.IPv4Address(prefixForIP + str(2), "255.255.255.0"))
        
 node2.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/setup_docker.sh"))
 node2.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/linpack/docker_linpack.sh"))
+node2.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/linpack/docker_stream.sh"))
 
 # Setup Singularity node
 
@@ -63,6 +64,7 @@ iface3.addAddress(pg.IPv4Address(prefixForIP + str(3), "255.255.255.0"))
        
 node3.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/setup_singularity.sh"))
 node3.addService(pg.Execute(shell="sh", command="sudo bash /local/repository/linpack/singularity_linpack.sh"))
+
 
 link = request.LAN("lan")
 
