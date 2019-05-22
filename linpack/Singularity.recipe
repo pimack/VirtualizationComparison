@@ -12,4 +12,4 @@ From: ubuntu:18.04
   apt-get install -y libgomp1 numactl
   
 %runscript
-  /xlinpack_xeon64
+  numactl --physcpubind=all --localalloc /xlinpack_xeon64
