@@ -1,5 +1,5 @@
 To use linpack in Singularity, execute the following in the shell:
- - sudo singularity run linpack.img VirtualizationComparison/linpack
+ - sudo singularity run /VirtualizationComparison/linpack/linpack.img
  
  To use linpack in Docker, execute the following in the shell:
  - sudo docker run -it --rm --privileged linpack
