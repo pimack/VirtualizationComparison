@@ -12,5 +12,5 @@ From: ubuntu:18.04
   apt-get install -y libgomp1 numactl
   
 %runscript
-  /stream.exe
+  numactl --physcpubind=all --localalloc /stream.exe
   
