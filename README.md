@@ -120,7 +120,7 @@ To run linpack on KVM, execute the following:
 
 * CloudLab - Cloud provider for academic research
 * Docker - PaaS and SaaS OS-level virtualization software
-* Singularity - OS-level virtualization sofware#
+* Singularity - OS-level virtualization software
 * Python and Shell - scripts for CloudLab deployment and installation
 
 
