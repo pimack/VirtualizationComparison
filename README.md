@@ -30,7 +30,7 @@ To fix this issue, in the file 'profile.py' of this repository, change every app
 
 > x.hardware_type = "c220g2"
  
-**to a different hardware type. You can find all available nodes and server load at https://www.cloudlab.us/resinfo.php (login required). Otherwise, you may wait until the nodes become available**
+**to a different hardware type. You can find all available nodes and server load at https://www.cloudlab.us/resinfo.php (login required). Otherwise, you may wait until the nodes become available again.**
 
 On subsequent runs after the profile is created, to run the experiment again, click "Start Experiment", select the created profile, and then press "Show Profile" to get back to step 2, then proceed as normal.
 
